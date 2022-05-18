@@ -6,7 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: ls
       
       - id: 'auth'
         name: 'Authenticate to Google Cloud'
@@ -24,3 +23,7 @@ jobs:
           
       - name: Terraform plan
         run: terraform plan
+        
+      - name: rover
+        uses: im2nguyen/rover@v0.3.2
+      - run: ls
