@@ -2,8 +2,24 @@ name: Visual
 on: [push]
 jobs:
   visual:
+    name: Visaul TF
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: ls
       
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+      
+      - name: Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.1.9
+      
+      - name: Terraform plan
+        run: terraform plan
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
