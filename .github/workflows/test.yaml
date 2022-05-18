@@ -1,8 +1,8 @@
-name: learn-github-actions
+name: Visual
 on: [push]
 jobs:
-  check-bats-version:
+  visual:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: echo "Hello"
+      - run: ll
