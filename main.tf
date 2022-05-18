@@ -8,8 +8,6 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("file.json")
-
   project = "apt-memento-347706"
   region  = "us-central1"
   zone    = "us-central1-c"
