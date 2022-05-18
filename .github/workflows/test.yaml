@@ -25,5 +25,5 @@ jobs:
         run: terraform plan
         
       - name: rover
-        uses: im2nguyen/rover@v0.3.2
+        uses: im2nguyen/rover@v0.3.2 --help
       - run: ls
