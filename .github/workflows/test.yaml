@@ -13,17 +13,5 @@ jobs:
         with:
           credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
       
-      - name: Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 1.1.9
-          
-      - name: Terraform Init
-        run: terraform init
-          
-      - name: Terraform plan
-        run: terraform plan
-        
       - name: rover
-        uses: im2nguyen/rover@v0.3.2 --help
-      - run: ls
+        uses: Official-James/rover-terraform-action@main
