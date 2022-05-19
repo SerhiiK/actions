@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           name: rover
-          path: "docs/rover.zip"
+          path: "rover.zip"
   
 #   deploy:
 #     name: Deploying
