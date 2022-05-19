@@ -22,6 +22,8 @@ jobs:
       - run: |
            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
            git config --local user.name "github-actions[bot]"]
+           cd docs
+           git add --all
            git status
 
           
