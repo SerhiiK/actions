@@ -37,6 +37,8 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
            name: rover_'${{ github.sha }}'
+           
+      - run: ls -hal     
       - run: unzip -f rover.zip
       - run: ls -hal docs
       - run: cat docs/plan.js
