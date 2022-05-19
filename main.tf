@@ -15,8 +15,6 @@ provider "google" {
 
 resource "google_compute_network" "vpc_network" {
   name = "terraform-network2"
+  description = "bla bla bla"
 }
 
-resource "google_compute_network" "vpc_network" {
-  name = "terraform-network1"
-}
