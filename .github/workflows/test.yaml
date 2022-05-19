@@ -41,7 +41,12 @@ jobs:
           cd docs
           git add --all
           git commit -m "Add new version of TF visualisation"
-          git push
+     
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
 
           
           
