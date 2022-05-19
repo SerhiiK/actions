@@ -41,6 +41,7 @@ jobs:
           cd docs
           git add --all
           git commit -m "Add new version of TF visualisation"
+          git push
 
           
           
