@@ -20,7 +20,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           name: rover
-          path: "./rover.zip"
+          path: "./rover_${{ github.sha }}.zip"
   
   deploy:
     name: Deploying
@@ -33,7 +33,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
            name: rover
-      - run: unzip -f rover.zip -d docs 
+      - run: unzip -f rover_{{ github.sha }}.zip -d docs 
       - run: ls -hal docs
       - run: cat docs/plan.js
       
