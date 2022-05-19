@@ -6,7 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: ls
       
       - id: 'auth'
         name: 'Authenticate to Google Cloud'
@@ -14,17 +13,11 @@ jobs:
         with:
           credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
       
-      - name: Terraform
-        uses: hashicorp/setup-terraform@v1
+      - name: rover
+        uses: Official-James/rover-terraform-action@main
+        
+      - name: Upload rover Artifact
+        uses: actions/upload-artifact@v2.2.4
         with:
-          terraform_version: 1.1.9
-          
-      - name: Terraform Init
-        run: terraform init
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-          
-      - name: Terraform plan
-        run: terraform plan
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          name: rover
+          path: "./rover.zip"
