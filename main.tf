@@ -13,7 +13,7 @@ provider "google" {
   zone    = "us-central1-c"
 }
 
-resource "google_compute_network" "vpc_network" {
+resource "google_compute_network" "vpc_network_default" {
   name = "terraform-network2"
   description = "bla bla bla"
 }
