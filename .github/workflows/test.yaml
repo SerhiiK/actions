@@ -1,3 +1,5 @@
+env:
+  
 name: Visual
 on: [push]
 jobs:
@@ -35,15 +37,15 @@ jobs:
            name: rover
       - run: unzip -f rover.zip -d docs 
       - run: ls -hal docs
+      - run: cat plan.js
       
-      - run: |
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"]
-          cd docs
-          cat plan.js
-          git add .
-          git status
-          git commit -m "Add new version of TF visualisation"
+#       - run: |
+#           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+#           git config --local user.name "github-actions[bot]"]
+#           cd docs
+#           git add .
+#           git status
+#           git commit -m "Add new version of TF visualisation"
           
      
 #       - name: Push changes
