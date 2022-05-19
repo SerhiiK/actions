@@ -48,9 +48,9 @@ jobs:
 #           key: ${{ github.sha }}     
          
       - run: ls -hal     
-#       - run: unzip -f rover.zip
-#       - run: ls -hal docs
-#       - run: cat docs/plan.js
+      - run: unzip -f rover.zip
+      - run: ls -hal docs
+      - run: cat docs/plan.js
       
 #       - run: |
 #           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
