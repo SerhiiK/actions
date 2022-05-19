@@ -19,12 +19,16 @@ jobs:
       - run: ls -hal
       - run: unzip rover.zip
       - run: cat plan.js
-        
-      - name: Upload rover Artifact
-        uses: actions/upload-artifact@v2.2.4
+      - uses: actions/cache@v2
         with:
-          name: rover_'${{ github.sha }}'
-          path: "rover.zip"
+          path: ./rover.zip
+          key: ${{ github.sha }}
+          
+#       - name: Upload rover Artifact
+#         uses: actions/upload-artifact@v2.2.4
+#         with:
+#           name: rover_'${{ github.sha }}'
+#           path: "rover.zip"
   
   deploy:
     name: Deploying
@@ -34,14 +38,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - uses: actions/download-artifact@v2
+#      - uses: actions/download-artifact@v2
+#        with:
+#           name: rover_'${{ github.sha }}'
+
+      - uses: actions/cache@v2
         with:
-           name: rover_'${{ github.sha }}'
-           
+          path: ./rover.zip
+          key: ${{ github.sha }}     
+         
       - run: ls -hal     
-      - run: unzip -f rover.zip
-      - run: ls -hal docs
-      - run: cat docs/plan.js
+#       - run: unzip -f rover.zip
+#       - run: ls -hal docs
+#       - run: cat docs/plan.js
       
 #       - run: |
 #           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
