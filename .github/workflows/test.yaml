@@ -24,20 +24,20 @@ jobs:
           name: rover_'${{ github.sha }}'
           path: "rover.zip"
   
-#   deploy:
-#     name: Deploying
-#     runs-on: ubuntu-latest
-#     needs: visual
-#     continue-on-error: true
-#     steps:
-#       - uses: actions/checkout@v3
+  deploy:
+    name: Deploying
+    runs-on: ubuntu-latest
+    needs: visual
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v3
       
-#       - uses: actions/download-artifact@v2
-#         with:
-#            name: rover
-#       - run: unzip -f rover.zip
-#       - run: ls -hal docs
-#       - run: cat docs/plan.js
+      - uses: actions/download-artifact@v2
+        with:
+           name: rover_'${{ github.sha }}'
+      - run: unzip -f rover.zip
+      - run: ls -hal docs
+      - run: cat docs/plan.js
       
 #       - run: |
 #           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
