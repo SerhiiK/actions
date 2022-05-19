@@ -16,8 +16,6 @@ jobs:
       - name: rover
         uses: Official-James/rover-terraform-action@main
         
-      - run: ls -hal
-        
       - name: Upload rover Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
@@ -35,12 +33,14 @@ jobs:
         with:
            name: rover
       - run: unzip -f rover.zip -d docs 
+      - run: ls -hal docs
       
       - run: |
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add docs/*
           git commit -m "Add new version of TF visualisation"
+      
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
