@@ -14,7 +14,7 @@ provider "google" {
 }
 
 resource "google_compute_network" "vpc_network_default_maybe" {
-  name = "terraform-network3"
-  description = "bla bla bla"
+  name = "terraform-networking-base"
+  description = "bla bla bla more bla"
 }
 
