@@ -35,7 +35,7 @@ jobs:
            name: rover
       - run: unzip -f rover.zip -d docs 
       - run: ls -hal docs
-      - run: cat plan.js
+      - run: cat docs/plan.js
       
 #       - run: |
 #           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
