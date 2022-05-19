@@ -21,7 +21,7 @@ jobs:
       - name: Upload rover Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: rover_file
+          name: rover_{{ git.sha }}
           path: "rover.zip"
   
 #   deploy:
