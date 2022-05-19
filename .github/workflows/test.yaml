@@ -17,55 +17,7 @@ jobs:
         uses: Official-James/rover-terraform-action@main
         
       - run: ls -hal
-      - run: unzip rover.zip
-      - run: cat plan.js
-      - uses: actions/cache@v2
-        with:
-          path: ./rover.zip
-          key: ${{ github.sha }}
-          
-#       - name: Upload rover Artifact
-#         uses: actions/upload-artifact@v2.2.4
-#         with:
-#           name: rover_'${{ github.sha }}'
-#           path: "rover.zip"
-  
-  deploy:
-    name: Deploying
-    runs-on: ubuntu-latest
-    needs: visual
-    continue-on-error: true
-    steps:
-      - uses: actions/checkout@v3
-      
-#      - uses: actions/download-artifact@v2
-#        with:
-#           name: rover_'${{ github.sha }}'
+      - run: unzip -f rover.zip -d docs
 
-#       - uses: actions/cache@v2
-#         with:
-#           path: ./rover.zip
-#           key: ${{ github.sha }}     
-         
-      - run: ls -hal     
-      - run: unzip -f rover.zip
-      - run: ls -hal docs
-      - run: cat docs/plan.js
-      
-#       - run: |
-#           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-#           git config --local user.name "github-actions[bot]"]
-#           cd docs
-#           git add .
-#           git status
-#           git commit -m "Add new version of TF visualisation"
-          
-     
-#       - name: Push changes
-#         uses: ad-m/github-push-action@master
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           branch: ${{ github.ref }}
 
-          
           
