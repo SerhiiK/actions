@@ -34,4 +34,4 @@ jobs:
            name: rover
       - run: mkdir docs && unzip rover.zip -d docs 
       
-      - run: ls -hal
+      - run: ls -hal docs
