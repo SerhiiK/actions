@@ -17,6 +17,7 @@ jobs:
         uses: Official-James/rover-terraform-action@main
         
       - run: rm -r docs/*
+      - run: ls -hal docs
       - run: unzip -u rover.zip -d docs
       - run: ls -hal docs
       - run: |
