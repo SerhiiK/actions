@@ -25,6 +25,6 @@ jobs:
            git config --local user.name "github-actions[bot]"]
            cd docs
            git add --all
-           git status
+      - run: git status
 
           
