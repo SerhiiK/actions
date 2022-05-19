@@ -16,6 +16,8 @@ jobs:
       - name: rover
         uses: Official-James/rover-terraform-action@main
         
+      - run: ls -hal
+        
       - name: Upload rover Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
