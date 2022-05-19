@@ -25,6 +25,10 @@ jobs:
            git config --local user.name "github-actions[bot]"]
            cd docs
            git add --all
-      - run: git status
-
+           
+      - name: Push changes
+          uses: ad-m/github-push-action@master
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            branch: ${{ github.ref }}
           
