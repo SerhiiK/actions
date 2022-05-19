@@ -42,10 +42,10 @@ jobs:
 #        with:
 #           name: rover_'${{ github.sha }}'
 
-      - uses: actions/cache@v2
-        with:
-          path: ./rover.zip
-          key: ${{ github.sha }}     
+#       - uses: actions/cache@v2
+#         with:
+#           path: ./rover.zip
+#           key: ${{ github.sha }}     
          
       - run: ls -hal     
 #       - run: unzip -f rover.zip
