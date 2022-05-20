@@ -14,8 +14,9 @@ jobs:
           credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
       
       - run: |
-           wget --version
-           curl --version
+           wget https://github.com/im2nguyen/rover/releases/download/v0.3.2/rover_0.3.2_linux_amd64.zip
+           unzip rover_0.3.2_linux_amd64.zip
+           ls
         
         
 #       - run: rm -r docs/*
