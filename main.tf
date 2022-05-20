@@ -14,12 +14,12 @@ provider "google" {
 }
 
 resource "google_compute_network" "vpc_network_default_maybe" {
-  name = "var.vpc_name"
+  name = var.vpc_name
   description = "bla bla bla more bla"
 }
 
 resource "google_compute_backend_bucket" "image_backend" {
-  name        = "var.image_name"
+  name        = var.image_name
   description = "Contains beautiful images"
   bucket_name = google_storage_bucket.image_bucket.name
   enable_cdn  = true
