@@ -5,12 +5,12 @@ jobs:
     name: Visaul TF
     runs-on: ubuntu-latest
     env:
-     VAR: true
+     VAR: 'true'
     steps:
       - uses: actions/checkout@v3
            
       - name: Statetman test
-        if: ${{ env.VAR == true }}
+        if: ${{ env.VAR == 'true' }}
         run: echo Hi
         
         
