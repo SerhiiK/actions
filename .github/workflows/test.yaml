@@ -1,5 +1,6 @@
 name: Visual
 on: [push]
+
 jobs:
   visual:
     name: Visaul TF
@@ -8,25 +9,9 @@ jobs:
      VAR: 'false'
     steps:
       - uses: actions/checkout@v3
-           
-      - name: Statetman test
-        if: ${{ env.VAR == 'true' }}
-        run: echo Hi
-        
-        
-#       - run: rm -r docs/*
-#       - run: ls -hal docs
-#       - run: unzip -u rover.zip -d docs
-#       - run: ls -hal docs
-#       - run: |
-#            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-#            git config --local user.name "github-actions[bot]"]
-#            cd docs
-#            git add --all
-#            git commit -m "Add changes in graph" 
-           
-#       - name: Push changes
-#         uses: ad-m/github-push-action@master
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           branch: ${{ github.ref }}
+      
+      - name: Deploy artifact app
+        uses: actions/upload-artifact@v3
+        with:
+          name: rover.zip
+          path: rover.zip
