@@ -1,0 +1,6 @@
+name: jon_inside_jon
+
+jobs:
+  artifact:
+    uses: ./.github/workflows/get_artifact.yml
+    
