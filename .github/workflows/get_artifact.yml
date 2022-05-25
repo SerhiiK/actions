@@ -1,0 +1,17 @@
+name: Get-Artifact
+
+on: push
+
+jobs:
+   get-artifact:
+     runs-on: ubuntu-latest
+     
+     steps:
+       - uses: actions/checkout@v3
+       
+       - name: Download artifacts from all projects
+          uses: dawidd6/action-download-artifact@v2
+          with:
+            workflow: test.yaml
+            name: rover.zip
+       - run: ls 
