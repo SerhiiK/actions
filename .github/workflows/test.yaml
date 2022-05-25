@@ -4,6 +4,8 @@ jobs:
   visual:
     name: Visaul TF
     runs-on: ubuntu-latest
+    env:
+     var: true
     steps:
       - uses: actions/checkout@v3
       
@@ -17,6 +19,10 @@ jobs:
            wget https://github.com/im2nguyen/rover/releases/download/v0.3.2/rover_0.3.2_linux_amd64.zip
            unzip -o rover_0.3.2_linux_amd64.zip
            ls
+           
+      - name: Statetman test
+        if: var == true
+        run: echo Hi
         
         
 #       - run: rm -r docs/*
