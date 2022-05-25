@@ -1,6 +1,11 @@
 name: Get-Artifact
 
-on: push
+on: 
+   workflow_call:
+     inputs:
+       project:
+         required: false
+         type: string     
 
 jobs:
    get-artifact:
