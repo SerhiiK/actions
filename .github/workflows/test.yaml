@@ -5,7 +5,7 @@ jobs:
     name: Visaul TF
     runs-on: ubuntu-latest
     env:
-     VAR: 'true'
+     VAR: 'false'
     steps:
       - uses: actions/checkout@v3
            
