@@ -1,5 +1,7 @@
 name: jon_inside_jon
 
+on: push
+
 jobs:
   artifact:
     uses: ./.github/workflows/get_artifact.yml
