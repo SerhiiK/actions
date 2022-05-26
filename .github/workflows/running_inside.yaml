@@ -4,5 +4,5 @@ on: push
 
 jobs:
   artifact:
-    uses: ./.github/workflows/get_artifact.yml
+    uses: ./.github/workflows/test.yml
     
