@@ -1,8 +1,0 @@
-name: jon_inside_jon
-
-on: push
-
-jobs:
-  artifact:
-    uses: ./.github/workflows/test.yml
-    
